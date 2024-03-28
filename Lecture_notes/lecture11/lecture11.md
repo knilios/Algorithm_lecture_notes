@@ -70,6 +70,7 @@ Also, the min is the value at the roots (if you can't see that).
 - extract_min()
 
 ![Extracting min](image2.gif)
+
     - How to do it (You can see in the image, it starts when all the nodes are green)
     ```c
     extract_min()
@@ -79,7 +80,7 @@ Also, the min is the value at the roots (if you can't see that).
         FIX THE HEAP (we will be using heapify_down(0)$in this case)
         return s
     ```
-    ```
+```
     heapify_down(i)
         li <- 2i+1
         ri <- 2i+2
@@ -98,7 +99,7 @@ Also, the min is the value at the roots (if you can't see that).
                     swap
                 else
                     do nothing
-    ```
+```
     The complexity is O(n)
 
     height of heap is O($log(n)$)
@@ -182,6 +183,7 @@ That is valid btw.
     - If there are 2 children, then oh boy. You need to find something to replace the x bellow, what you can do is to extract min from the green subnode and replace it in the x.
 
     ![example](image-8.png)
+    
     - The complexity is $O(log(n))$
 
 ## Sorting Algorithm
