@@ -15,8 +15,8 @@ This is a queue with a twist. The thing that will get out first is the one with 
 **After this is optional**
 - find(value) {optional} => returns YES or NO (pointer)
 - delete(value) 
-- decreased_key($v_{old},v_{new}$) (where $v_{old}>v_{new}$)
-- increased_key($v_{old},v_{new}$) (where $v_{old}<v_{new}$)
+- decreased_key($v_{old},v_{new}$) (where $v_{old} > v_{new}$)
+- increased_key($v_{old},v_{new}$) (where $v_{old} < v_{new}$)
 
 ### Example
 ```
@@ -65,8 +65,10 @@ Also, the min is the value at the roots (if you can't see that).
 
 ### implement requirements
 - insert(value) => place the value in the next place available 
+
 ![heap insertion](image-3.png)
 - extract_min()
+
 ![Extracting min](image2.gif)
     - How to do it (You can see in the image, it starts when all the nodes are green)
     ```c
@@ -178,7 +180,8 @@ That is valid btw.
     - If the node has no children, then, just delete the node and then call it a day.
     - If there are 1 child, move that child up.
     - If there are 2 children, then oh boy. You need to find something to replace the x bellow, what you can do is to extract min from the green subnode and replace it in the x.
-    ![alt text](image-8.png)
+
+    ![example](image-8.png)
     - The complexity is $O(log(n))$
 
 ## Sorting Algorithm
