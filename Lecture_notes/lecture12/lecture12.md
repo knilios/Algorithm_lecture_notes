@@ -60,3 +60,103 @@ This is how you do it futhur (New example)
 ![breadthFirstSearch picture](image-9.png)
 
 As you can see, this is similar to the one shown before. This is because the 
+
+## Directed Acycllic Graphs: Depth-first Search
+
+![DAG example picture](image-10.png)
+
+DAG graph recap
+
+![BFS algorithm picture](image-12.png)
+
+Note that: weight can also be negative too
+
+![Example on dfs](image-11.png)
+
+The graph always goes from left to right. Therefore, the $\infty$ on the most left will never be changed.
+
+## Dijkstra's algorithm
+
+![Picture of Dijkstra's algorithm](image-13.png)
+
+This is not designed for a negative weight
+
+### Example - it might be wrong tho...
+
+#### initialize
+
+![init](image-15.png)
+
+#### Next
+
+![alt text](image-16.png)
+
+![alt text](image-17.png)
+
+![alt text](image-18.png)
+
+![alt text](image-19.png)
+
+Imagine there is a negative loop, where if you loop inside, the distance will keep decreasing.
+
+**DO NOT ALLOW THAT TO EXIST**
+
+Ahem...
+
+## Bellman-Ford Algorithm
+
+![A picture of Bellman-Ford algorithm](image-20.png)
+
+### Example 
+
+![alt text](image-21.png)
+
+![alt text](image-22.png)
+
+![alt text](image-23.png)
+
+![alt text](image-24.png)
+
+Literally check every edge for V-1 times
+
+And then check every edge one more time so it can find the hidden negative loop.
+
+![alt text](image-25.png)
+
+![alt text](image-26.png)
+
+### Example: What if I don't have a DAG
+
+![Not a DAG](image-27.png)
+
+Not to worry! Try this: 
+
+![A DAG](image-28.png)
+
+If we duplicate the original graph V times and put them into floors. We'll get a DAG! Yay!
+
+vertices
+
+V' = Vx{0,1,...,V-1}
+
+= {(v,i)|v $\epsilon$ V and i $\epsilon$ {0,...,V-1}}
+
+edges 
+
+problem: 
+shortest path from (s,0)
+
+Algorithm: DAGSHORTESTPATH
+
+Running time: $O(V'+E')=O(V^2+EV)=O(EV)$
+
+
+## Summary
+
+|type of graph|algorithm|time complexity|
+|-------------|---------|---------------|
+|unweighted|BFS|$O(V+E)$|
+|weighted DAG|dag shortest path|$O(V+E)$|
+|weighted no neg edge|Dijkstra|$O(Elog(V))$|
+|weighted|Bellman-Ford|$O(EV)$|
+
