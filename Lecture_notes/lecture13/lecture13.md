@@ -130,3 +130,6 @@ for i <- 1 to n
 return S
 
 ### Example: greedy algo -> solution G = <g1, g2, ..., gl>
+
+
+... read more on page 182 of Jeff Erickson's book
