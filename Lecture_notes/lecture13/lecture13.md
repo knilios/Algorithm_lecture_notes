@@ -93,12 +93,40 @@ Strategy 2: Lowest weight -> still bad :(
 
 Stratehy 3: Highest $\frac{price}{weight}$ ratio -> It doesn't work either!! :(
 
-Protip: There's really not gonna be a greedy algorithm that's going to work. But if you want to be sure that in sometimes, some of the strategy works. You have to prove it. (We'd like to prove it, prove it)
+Protip: There's really not gonna be a greedy algorithm that's going to work perfectly. But if you want to make sure that, in some cases, some of the strategy works. You just have to prove it. (We'd like to prove it, prove it)
+
+Like this but more depressing and less dancing.
+
+![WE LIKE TO PROVE IT PROVE IT](image-8.png)
 
 #### Fractional Knapsack Problem
 In this one, you can actually take a portion of the options you have.
 
 ## Interval Scheduling
-Here's the situation: We want to schedule a time table 
+Here's the situation: SKE students have a lot of classes and we need to schedule the study time table. We cannot have any class overlap. (We, however, do not have to include time for sleep and eat, because REAL programmers don't need that.)
 
+```pseudo
+Given n events/intervals
+    Event i has start time Si
+        Finishing time fi
+```
 
+What is the maximum number of **non-overlapping** events(class)?
+
+Strategy 1: Starts the earliest (that doesnt'overlap with what I have picked)
+
+## Proof the correctness of Greedy Algorithm
+
+1. Greedy Stays Ahead - Break it into multiple steps and prove that your greedy algorithm runs no worse than the optimal algorithm in all and each steps.
+2. Exchange argument - 
+
+```pseudo
+ends first (O(nlog(n)))
+Sort intervals by finishing time (MERGE SORT) (say f1 <= f2 <= ... <= fn after sorting)
+S <- {}
+for i <- 1 to n
+    if interval i does not intersect with the last interval picked
+        S <- S U {i}
+return S
+
+### Example: greedy algo -> solution G = <g1, g2, ..., gl>
